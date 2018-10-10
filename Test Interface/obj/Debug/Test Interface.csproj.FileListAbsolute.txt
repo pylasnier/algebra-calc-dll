@@ -6,3 +6,13 @@
 \\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\obj\Debug\Test Interface.csprojResolveAssemblyReference.cache
 \\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\obj\Debug\Test Interface.exe
 \\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\obj\Debug\Test Interface.pdb
+C:\Users\py\source\repos\Algebra Calculator\Test Interface\obj\Debug\Test Interface.csprojAssemblyReference.cache
+C:\Users\py\source\repos\Algebra Calculator\Test Interface\obj\Debug\Test Interface.csproj.CoreCompileInputs.cache
+C:\Users\py\source\repos\Algebra Calculator\Test Interface\obj\Debug\Test Interface.exe
+C:\Users\py\source\repos\Algebra Calculator\Test Interface\obj\Debug\Test Interface.pdb
+C:\Users\py\source\repos\Algebra Calculator\Test Interface\bin\Debug\Test Interface.exe.config
+C:\Users\py\source\repos\Algebra Calculator\Test Interface\bin\Debug\Test Interface.exe
+C:\Users\py\source\repos\Algebra Calculator\Test Interface\bin\Debug\Test Interface.pdb
+C:\Users\py\source\repos\Algebra Calculator\Test Interface\bin\Debug\Algebra Calculator.dll
+C:\Users\py\source\repos\Algebra Calculator\Test Interface\bin\Debug\Algebra Calculator.pdb
+C:\Users\py\source\repos\Algebra Calculator\Test Interface\obj\Debug\Test Interface.csproj.CopyComplete

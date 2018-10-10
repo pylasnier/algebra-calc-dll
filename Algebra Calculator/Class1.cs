@@ -8,13 +8,15 @@ namespace Algebra
 {
     public enum MathOperator
     {
-        Multiply = 0,
-        Divide = 1,
-        Add = 2,
-        Subtract = 3,
-        Power = 4
+        None = 0,
+        Add = 1,
+        Subtract = 2,
+        Multiply = 3,
+        Divide = 4,
+        Power = 5
     };
 
+    //Expression objects will always represent either operations (expressions), constants e.g. integer values, or symbols that will represent values
     public enum MathOperand
     {
         Expression = 0,
@@ -37,102 +39,156 @@ namespace Algebra
         {
             SetConstant(value);
         }
+
         public Expression(char value)
         {
             SetSymbol(value);
+        }
+
+        public Expression(Expression value)
+        {
+            SetExpression(value);
+        }
+
+        public Expression(Expression leftExpression, Expression rightExpression, MathOperator newMathOperator)
+        {
+            SetExpression(leftExpression, rightExpression, newMathOperator);
+        }
+
+        public Expression(int leftExpression, Expression rightExpression, MathOperator newMathOperator)
+        {
+            SetExpression(leftExpression, rightExpression, newMathOperator);
+        }
+
+        public Expression(char leftExpression, Expression rightExpression, MathOperator newMathOperator)
+        {
+            SetExpression(leftExpression, rightExpression, newMathOperator);
+        }
+
+        public Expression(Expression leftExpression, int rightExpression, MathOperator newMathOperator)
+        {
+            SetExpression(leftExpression, rightExpression, newMathOperator);
+        }
+
+        public Expression(Expression leftExpression, char rightExpression, MathOperator newMathOperator)
+        {
+            SetExpression(leftExpression, rightExpression, newMathOperator);
+        }
+
+        public Expression(int leftExpression, int rightExpression, MathOperator newMathOperator)
+        {
+            SetExpression(leftExpression, rightExpression, newMathOperator);
+        }
+
+        public Expression(char leftExpression, char rightExpression, MathOperator newMathOperator)
+        {
+            SetExpression(leftExpression, rightExpression, newMathOperator);
+        }
+
+        public Expression(int leftExpression, char rightExpression, MathOperator newMathOperator)
+        {
+            SetExpression(leftExpression, rightExpression, newMathOperator);
+        }
+
+        public Expression(char leftExpression, int rightExpression, MathOperator newMathOperator)
+        {
+            SetExpression(leftExpression, rightExpression, newMathOperator);
         }
 
         public Expression()
         {
             SetConstant(0);
         }
-
-        public double Solve()
-        {
-            return 0.0f;
-        }
-
-        public double Value
-        {
-            get
-            {
-                return Solve();
-            }
-        }
-
         public void SetConstant(int input)
         {
             mathOperand = MathOperand.Constant;
             constant = input;
+
+            symbol = '\0';
+            leftOperand = null;
+            rightOperand = null;
         }
 
         public void SetSymbol(char input)
         {
             mathOperand = MathOperand.Symbol;
             symbol = input;
+
+            constant = 0;
+            leftOperand = null;
+            rightOperand = null;
         }
 
-        public void SetExpression(Expression leftExpression, Expression rightExpression, MathOperator newMathOperator)
+        //All overloads for defining expressions
+        public void SetExpression(Expression input)
         {
-            leftOperand = leftExpression;
-            rightOperand = rightExpression;
+            switch (input.mathOperand)
+            {
+                case MathOperand.Constant:
+                    SetConstant(input.constant);
+                    break;
+
+                case MathOperand.Symbol:
+                    SetSymbol(input.symbol);
+                    break;
+
+                case MathOperand.Expression:
+                    SetExpression(input.leftOperand, input.rightOperand, input.mathOperator);
+                    break;
+            }
+        }
+
+        private void setExpressionGeneric(dynamic leftExpression, dynamic rightExpression, MathOperator newMathOperator)
+        {
+            leftOperand = new Expression(leftExpression);
+            rightOperand = new Expression(rightExpression);
             mathOperator = newMathOperator;
             mathOperand = MathOperand.Expression;
         }
 
-        public void SetExpression(int leftConstant, Expression rightExpression, MathOperator newMathOperator)
+        public void SetExpression(Expression leftExpression, Expression rightExpression, MathOperator newMathOperator)
         {
-            Expression newLeftOperand = new Expression(leftConstant);
-            SetExpression(newLeftOperand, rightExpression, newMathOperator);
+            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
         }
 
-        public void SetExpression(char leftSymbol, Expression rightExpression, MathOperator newMathOperator)
+        public void SetExpression(int leftExpression, Expression rightExpression, MathOperator newMathOperator)
         {
-            Expression newLeftOperand = new Expression(leftSymbol);
-            Expression newRightOperand = new Expression(rightConstant);
-            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
         }
 
-        public void SetExpression(Expression leftExpression, int rightConstant, MathOperator newMathOperator)
+        public void SetExpression(char leftExpression, Expression rightExpression, MathOperator newMathOperator)
         {
-            Expression newLeftOperand = new Expression(leftConstant);
-            Expression newRightOperand = new Expression(rightConstant);
-            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
         }
 
-        public void SetExpression(Expression leftExpression, char rightSymbol, MathOperator newMathOperator)
+        public void SetExpression(Expression leftExpression, int rightExpression, MathOperator newMathOperator)
         {
-            Expression newLeftOperand = new Expression(leftConstant);
-            Expression newRightOperand = new Expression(rightConstant);
-            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
         }
 
-        public void SetExpression(int leftConstant, int rightConstant, MathOperator newMathOperator)
+        public void SetExpression(Expression leftExpression, char rightExpression, MathOperator newMathOperator)
         {
-            Expression newLeftOperand = new Expression(leftConstant);
-            Expression newRightOperand = new Expression(rightConstant);
-            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
         }
 
-        public void SetExpression(char leftSymbol, char rightSymbol, MathOperator newMathOperator)
+        public void SetExpression(int leftExpression, int rightExpression, MathOperator newMathOperator)
         {
-            Expression newLeftOperand = new Expression(leftSymbol);
-            Expression newRightOperand = new Expression(rightSymbol);
-            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
         }
 
-        public void SetExpression(int leftConstant, char rightSymbol, MathOperator newMathOperator)
+        public void SetExpression(char leftExpression, char rightExpression, MathOperator newMathOperator)
         {
-            Expression newLeftOperand = new Expression(leftConstant);
-            Expression newRightOperand = new Expression(rightSymbol);
-            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
         }
 
-        public void SetExpression(char leftSymbol, int rightConstant, MathOperator newMathOperator)
+        public void SetExpression(int leftExpression, char rightExpression, MathOperator newMathOperator)
         {
-            Expression newLeftOperand = new Expression(leftSymbol);
-            Expression newRightOperand = new Expression(rightConstant);
-            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
+        }
+
+        public void SetExpression(char leftExpression, int rightExpression, MathOperator newMathOperator)
+        {
+            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
         }
     }
 }
