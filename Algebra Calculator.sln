@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algebra Calculator", "Algebra Calculator\Algebra Calculator.csproj", "{5407E351-A9B0-42E8-90D3-5A1E923A9A33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test Interface", "Test Interface\Test Interface.csproj", "{990E88CB-F670-4E26-8892-DF40D64A32CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5407E351-A9B0-42E8-90D3-5A1E923A9A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5407E351-A9B0-42E8-90D3-5A1E923A9A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5407E351-A9B0-42E8-90D3-5A1E923A9A33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{990E88CB-F670-4E26-8892-DF40D64A32CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{990E88CB-F670-4E26-8892-DF40D64A32CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{990E88CB-F670-4E26-8892-DF40D64A32CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{990E88CB-F670-4E26-8892-DF40D64A32CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

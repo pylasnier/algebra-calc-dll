@@ -1,0 +1,5 @@
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Algebra Calculator\bin\Debug\Algebra Calculator.dll
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Algebra Calculator\bin\Debug\Algebra Calculator.pdb
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Algebra Calculator\obj\Debug\Algebra Calculator.csprojResolveAssemblyReference.cache
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Algebra Calculator\obj\Debug\Algebra Calculator.dll
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Algebra Calculator\obj\Debug\Algebra Calculator.pdb

@@ -22,47 +22,6 @@ namespace Algebra
         Symbol = 2
     };
 
-    public class Solution
-    {
-        private Expression expression;
-
-        public Solution(dynamic value)
-        {
-            expression = new Expression(value);
-        }
-
-        public dynamic Value
-        {
-            get
-            {
-                return 0.0f;
-            }
-            set
-            {
-                if (typeof(string) == value.GetType())
-                {
-                    parse(value);
-                }
-                else
-                {
-                    expression.Value = value;
-                }
-            }
-        }
-
-        private void parse(string input)
-        {
-            expression = parse(input, 0, input.Length - 1);
-        }
-
-        private Expression parse(string input, int start, int end)
-        {
-            Expression solution;
-
-            return solution;
-        }
-    }
-
     public class Expression
     {
         private MathOperator mathOperator;
@@ -74,16 +33,18 @@ namespace Algebra
         private int constant;
         private char symbol;
 
-        public Expression(dynamic value)
+        public Expression(int value)
         {
-            if (typeof(char) == value.GetType() || typeof(int) == value.GetType())
-            {
-                set(value);
-            }
-            else
-            {
-                throw new ArgumentException();
-            }
+            SetConstant(value);
+        }
+        public Expression(char value)
+        {
+            SetSymbol(value);
+        }
+
+        public Expression()
+        {
+            SetConstant(0);
         }
 
         public double Solve()
@@ -91,35 +52,87 @@ namespace Algebra
             return 0.0f;
         }
 
-        public dynamic Value
+        public double Value
         {
             get
             {
                 return Solve();
             }
-            set
-            {
-                if (typeof(char) == value.GetType() || typeof(int) == value.GetType())
-                {
-                    set(value);
-                }
-                else
-                {
-                    throw new ArgumentException();
-                }
-            }
         }
 
-        private void set(int input)
+        public void SetConstant(int input)
         {
             mathOperand = MathOperand.Constant;
             constant = input;
         }
 
-        private void set(char input)
+        public void SetSymbol(char input)
         {
             mathOperand = MathOperand.Symbol;
             symbol = input;
+        }
+
+        public void SetExpression(Expression leftExpression, Expression rightExpression, MathOperator newMathOperator)
+        {
+            leftOperand = leftExpression;
+            rightOperand = rightExpression;
+            mathOperator = newMathOperator;
+            mathOperand = MathOperand.Expression;
+        }
+
+        public void SetExpression(int leftConstant, Expression rightExpression, MathOperator newMathOperator)
+        {
+            Expression newLeftOperand = new Expression(leftConstant);
+            SetExpression(newLeftOperand, rightExpression, newMathOperator);
+        }
+
+        public void SetExpression(char leftSymbol, Expression rightExpression, MathOperator newMathOperator)
+        {
+            Expression newLeftOperand = new Expression(leftSymbol);
+            Expression newRightOperand = new Expression(rightConstant);
+            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+        }
+
+        public void SetExpression(Expression leftExpression, int rightConstant, MathOperator newMathOperator)
+        {
+            Expression newLeftOperand = new Expression(leftConstant);
+            Expression newRightOperand = new Expression(rightConstant);
+            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+        }
+
+        public void SetExpression(Expression leftExpression, char rightSymbol, MathOperator newMathOperator)
+        {
+            Expression newLeftOperand = new Expression(leftConstant);
+            Expression newRightOperand = new Expression(rightConstant);
+            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+        }
+
+        public void SetExpression(int leftConstant, int rightConstant, MathOperator newMathOperator)
+        {
+            Expression newLeftOperand = new Expression(leftConstant);
+            Expression newRightOperand = new Expression(rightConstant);
+            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+        }
+
+        public void SetExpression(char leftSymbol, char rightSymbol, MathOperator newMathOperator)
+        {
+            Expression newLeftOperand = new Expression(leftSymbol);
+            Expression newRightOperand = new Expression(rightSymbol);
+            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+        }
+
+        public void SetExpression(int leftConstant, char rightSymbol, MathOperator newMathOperator)
+        {
+            Expression newLeftOperand = new Expression(leftConstant);
+            Expression newRightOperand = new Expression(rightSymbol);
+            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
+        }
+
+        public void SetExpression(char leftSymbol, int rightConstant, MathOperator newMathOperator)
+        {
+            Expression newLeftOperand = new Expression(leftSymbol);
+            Expression newRightOperand = new Expression(rightConstant);
+            SetExpression(newLeftOperand, newRightOperand, newMathOperator);
         }
     }
 }

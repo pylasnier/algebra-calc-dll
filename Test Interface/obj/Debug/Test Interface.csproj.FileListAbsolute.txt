@@ -1,0 +1,8 @@
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\bin\Debug\Test Interface.exe.config
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\bin\Debug\Test Interface.exe
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\bin\Debug\Test Interface.pdb
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\bin\Debug\Algebra Calculator.dll
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\bin\Debug\Algebra Calculator.pdb
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\obj\Debug\Test Interface.csprojResolveAssemblyReference.cache
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\obj\Debug\Test Interface.exe
+\\fs2\2018\2018lasnierp\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\obj\Debug\Test Interface.pdb
