@@ -144,6 +144,9 @@ namespace Algebra
             rightOperand = new Expression(rightExpression);
             mathOperator = newMathOperator;
             mathOperand = MathOperand.Expression;
+
+            constant = 0;
+            symbol = '\0';
         }
 
         public void SetExpression(Expression leftExpression, Expression rightExpression, MathOperator newMathOperator)
