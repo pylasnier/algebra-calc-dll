@@ -35,6 +35,32 @@ namespace Algebra
         private int constant;
         private char symbol;
 
+        public List<char> Symbols
+        {
+            get
+            {
+                List<char> symbols = new List<char>();
+
+                if (MathOperand.Symbol == mathOperand)
+                {
+                    symbols.Add(symbol);
+                }
+                else if (MathOperand.Expression == mathOperand)
+                {
+                    foreach (char aSymbol in leftOperand.Symbols)
+                    {
+                        symbols.Add(aSymbol);
+                    }
+                    foreach (char aSymbol in rightOperand.Symbols)
+                    {
+                        symbols.Add(aSymbol);
+                    }
+                }
+
+                return symbols;
+            }
+        }
+
         public Expression(int value)
         {
             SetConstant(value);
@@ -192,6 +218,20 @@ namespace Algebra
         public void SetExpression(char leftExpression, int rightExpression, MathOperator newMathOperator)
         {
             setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
+        }
+
+        //All overloads for operate methods, variants of SetExpression methods
+        public void Operate(Expression rightExpression, MathOperator newMathOperator)
+        {
+           SetExpression(this, rightExpression, newMathOperator);
+        }
+        public void Operate(int rightExpression, MathOperator newMathOperator)
+        {
+            SetExpression(this, rightExpression, newMathOperator);
+        }
+        public void Operate(char rightExpression, MathOperator newMathOperator)
+        {
+            SetExpression(this, rightExpression, newMathOperator);
         }
     }
 }
