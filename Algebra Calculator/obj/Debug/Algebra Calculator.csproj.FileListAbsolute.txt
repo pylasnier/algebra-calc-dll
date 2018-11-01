@@ -9,3 +9,8 @@ C:\Users\py\source\repos\Algebra Calculator\Algebra Calculator\obj\Debug\Algebra
 C:\Users\py\source\repos\Algebra Calculator\Algebra Calculator\obj\Debug\Algebra Calculator.csproj.CoreCompileInputs.cache
 C:\Users\py\source\repos\Algebra Calculator\Algebra Calculator\obj\Debug\Algebra Calculator.dll
 C:\Users\py\source\repos\Algebra Calculator\Algebra Calculator\obj\Debug\Algebra Calculator.pdb
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Algebra Calculator\bin\Debug\Algebra Calculator.dll
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Algebra Calculator\bin\Debug\Algebra Calculator.pdb
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Algebra Calculator\obj\Debug\Algebra Calculator.csprojResolveAssemblyReference.cache
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Algebra Calculator\obj\Debug\Algebra Calculator.dll
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Algebra Calculator\obj\Debug\Algebra Calculator.pdb

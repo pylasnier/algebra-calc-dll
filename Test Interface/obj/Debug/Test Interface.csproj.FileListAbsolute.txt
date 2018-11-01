@@ -16,3 +16,11 @@ C:\Users\py\source\repos\Algebra Calculator\Test Interface\bin\Debug\Test Interf
 C:\Users\py\source\repos\Algebra Calculator\Test Interface\bin\Debug\Algebra Calculator.dll
 C:\Users\py\source\repos\Algebra Calculator\Test Interface\bin\Debug\Algebra Calculator.pdb
 C:\Users\py\source\repos\Algebra Calculator\Test Interface\obj\Debug\Test Interface.csproj.CopyComplete
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\bin\Debug\Test Interface.exe.config
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\bin\Debug\Test Interface.exe
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\bin\Debug\Test Interface.pdb
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\bin\Debug\Algebra Calculator.dll
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\bin\Debug\Algebra Calculator.pdb
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\obj\Debug\Test Interface.csprojResolveAssemblyReference.cache
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\obj\Debug\Test Interface.exe
+N:\My Documents\Visual Studio 2017\Projects\Algebra Calculator\Test Interface\obj\Debug\Test Interface.pdb
