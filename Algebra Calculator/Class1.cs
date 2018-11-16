@@ -61,6 +61,7 @@ namespace Algebra
             }
         }
 
+        //All constructor overloads
         public Expression(int value)
         {
             SetConstant(value);
@@ -81,50 +82,23 @@ namespace Algebra
             SetExpression(leftExpression, rightExpression, newMathOperator);
         }
 
-        public Expression(int leftExpression, Expression rightExpression, MathOperator newMathOperator)
-        {
-            SetExpression(leftExpression, rightExpression, newMathOperator);
-        }
-
-        public Expression(char leftExpression, Expression rightExpression, MathOperator newMathOperator)
-        {
-            SetExpression(leftExpression, rightExpression, newMathOperator);
-        }
-
-        public Expression(Expression leftExpression, int rightExpression, MathOperator newMathOperator)
-        {
-            SetExpression(leftExpression, rightExpression, newMathOperator);
-        }
-
-        public Expression(Expression leftExpression, char rightExpression, MathOperator newMathOperator)
-        {
-            SetExpression(leftExpression, rightExpression, newMathOperator);
-        }
-
-        public Expression(int leftExpression, int rightExpression, MathOperator newMathOperator)
-        {
-            SetExpression(leftExpression, rightExpression, newMathOperator);
-        }
-
-        public Expression(char leftExpression, char rightExpression, MathOperator newMathOperator)
-        {
-            SetExpression(leftExpression, rightExpression, newMathOperator);
-        }
-
-        public Expression(int leftExpression, char rightExpression, MathOperator newMathOperator)
-        {
-            SetExpression(leftExpression, rightExpression, newMathOperator);
-        }
-
-        public Expression(char leftExpression, int rightExpression, MathOperator newMathOperator)
-        {
-            SetExpression(leftExpression, rightExpression, newMathOperator);
-        }
-
         public Expression()
         {
             SetConstant(0);
         }
+
+        //Implicit conversions for constants and symbols
+        public static implicit operator Expression(char input)
+        {
+            return new Expression(input);
+        }
+
+        public static implicit operator Expression(int input)
+        {
+            return new Expression(input);
+        }
+
+        //Defining expressions from constants, symbols, or other expressions
         public void SetConstant(int input)
         {
             mathOperand = MathOperand.Constant;
@@ -145,7 +119,6 @@ namespace Algebra
             rightOperand = null;
         }
 
-        //All overloads for defining expressions
         public void SetExpression(Expression input)
         {
             switch (input.mathOperand)
@@ -164,7 +137,7 @@ namespace Algebra
             }
         }
 
-        private void setExpressionGeneric(dynamic leftExpression, dynamic rightExpression, MathOperator newMathOperator)
+        public void SetExpression(Expression leftExpression, Expression rightExpression, MathOperator newMathOperator)
         {
             leftOperand = new Expression(leftExpression);
             rightOperand = new Expression(rightExpression);
@@ -175,63 +148,30 @@ namespace Algebra
             symbol = '\0';
         }
 
-        public void SetExpression(Expression leftExpression, Expression rightExpression, MathOperator newMathOperator)
+        //All overloads for implicit conversions for operators
+        public static Expression operator +(Expression leftExpression, Expression rightExpression)
         {
-            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
+            return new Expression(leftExpression, rightExpression, MathOperator.Add);
         }
 
-        public void SetExpression(int leftExpression, Expression rightExpression, MathOperator newMathOperator)
+        public static Expression operator -(Expression leftExpression, Expression rightExpression)
         {
-            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
+            return new Expression(leftExpression, rightExpression, MathOperator.Subtract);
         }
 
-        public void SetExpression(char leftExpression, Expression rightExpression, MathOperator newMathOperator)
+        public static Expression operator *(Expression leftExpression, Expression rightExpression)
         {
-            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
+            return new Expression(leftExpression, rightExpression, MathOperator.Multiply);
         }
 
-        public void SetExpression(Expression leftExpression, int rightExpression, MathOperator newMathOperator)
+        public static Expression operator /(Expression leftExpression, Expression rightExpression)
         {
-            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
+            return new Expression(leftExpression, rightExpression, MathOperator.Divide);
         }
 
-        public void SetExpression(Expression leftExpression, char rightExpression, MathOperator newMathOperator)
+        public static Expression operator ^(Expression leftExpression, Expression rightExpression)
         {
-            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
-        }
-
-        public void SetExpression(int leftExpression, int rightExpression, MathOperator newMathOperator)
-        {
-            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
-        }
-
-        public void SetExpression(char leftExpression, char rightExpression, MathOperator newMathOperator)
-        {
-            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
-        }
-
-        public void SetExpression(int leftExpression, char rightExpression, MathOperator newMathOperator)
-        {
-            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
-        }
-
-        public void SetExpression(char leftExpression, int rightExpression, MathOperator newMathOperator)
-        {
-            setExpressionGeneric(leftExpression, rightExpression, newMathOperator);
-        }
-
-        //All overloads for operate methods, variants of SetExpression methods
-        public void Operate(Expression rightExpression, MathOperator newMathOperator)
-        {
-           SetExpression(this, rightExpression, newMathOperator);
-        }
-        public void Operate(int rightExpression, MathOperator newMathOperator)
-        {
-            SetExpression(this, rightExpression, newMathOperator);
-        }
-        public void Operate(char rightExpression, MathOperator newMathOperator)
-        {
-            SetExpression(this, rightExpression, newMathOperator);
+            return new Expression(leftExpression, rightExpression, MathOperator.Power);
         }
     }
 }

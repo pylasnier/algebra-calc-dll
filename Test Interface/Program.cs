@@ -17,13 +17,15 @@ namespace Test_Interface
 
             List<char> myList;
 
-            myExpression = new Expression();
-            myExpression.SetSymbol('x');
-            myExpression.SetConstant(2018);
-            myExpression.SetExpression(new Expression('x'), 2, MathOperator.Power);
+            // myExpression = new Expression();
+            myExpression = 'x';
+            myExpression = 2018;
+            myExpression = new Expression('x') + 2;
+            myExpression = 2 + new Expression('x');
+            myExpression = (Expression)'x' + 2;
 
             myOtherExpression = new Expression(myExpression, new Expression(3, new Expression('a'), MathOperator.Multiply), MathOperator.Add);
-            myOtherExpression.Operate(314, MathOperator.Subtract);
+            myOtherExpression += 314;
 
             myList = myOtherExpression.Symbols;
         }
