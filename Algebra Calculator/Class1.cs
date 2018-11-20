@@ -32,7 +32,7 @@ namespace Algebra
         private Expression leftOperand;
         private Expression rightOperand;
 
-        private int constant;
+        private decimal constant;
         private char symbol;
 
         public List<char> Symbols
@@ -62,7 +62,7 @@ namespace Algebra
         }
 
         //All constructor overloads
-        public Expression(int value)
+        public Expression(decimal value)
         {
             SetConstant(value);
         }
@@ -93,13 +93,13 @@ namespace Algebra
             return new Expression(input);
         }
 
-        public static implicit operator Expression(int input)
+        public static implicit operator Expression(decimal input)
         {
             return new Expression(input);
         }
 
         //Defining expressions from constants, symbols, or other expressions
-        public void SetConstant(int input)
+        public void SetConstant(decimal input)
         {
             mathOperand = MathOperand.Constant;
             constant = input;
